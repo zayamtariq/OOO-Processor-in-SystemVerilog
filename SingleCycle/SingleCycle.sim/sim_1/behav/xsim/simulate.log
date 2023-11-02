@@ -1,0 +1,11 @@
+Time resolution is 1 ps
+Stopped at time : 0 fs : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/ALU.sv" Line 19
+Stopped at time : 100 ns : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv" Line 54
+Stopped at time : 200 ns : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv" Line 62
+Stopped at time : 300 ns : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv" Line 70
+Stopped at time : 400 ns : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv" Line 78
+Stopped at time : 500 ns : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv" Line 86
+Stopped at time : 600 ns : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv" Line 94
+Stopped at time : 700 ns : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv" Line 102
+Stopped at time : 800 ns : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv" Line 110
+Stopped at time : 900 ns : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv" Line 114
