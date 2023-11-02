@@ -5,7 +5,7 @@ module ALU(
     input wire logic [1:0] SHFCode, // if shf is NOT 00, then this IS a shf unit
     input wire logic [31:0] SrcA, 
     input wire logic [31:0] SrcB,
-    input wire logic Unsigned_ALU,  
+    input wire logic Unsigned_ALU,  // control signal here too
     output logic [31:0] ALU_Result 
     );
     
