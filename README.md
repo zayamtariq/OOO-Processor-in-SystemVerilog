@@ -12,3 +12,7 @@ The first step is to get it working in SystemVerilog, and learn how to fully tes
 ![image](https://github.com/zayamtariq/OOO-Processor-in-SystemVerilog/assets/31855609/505903a1-7183-4d0e-b68a-e01bf09fce96)
 
 I realized early on that I could reduce hardware by combining the ALU and SHF units (and that this is something I'd want once I get to functional units), so I ended up doing just that. Also pre-computed the "Shift Amount" immediate bits in the immediate/offset calculator component. 
+
+## Notes: 
+- H_B_W Mux for store operations is not necessary, can be a part of the memory's architecture itself
+- AUIPC and LUI instructions will need a special unit for themselves, or the architecture will need to be specially extended just for those two. 
