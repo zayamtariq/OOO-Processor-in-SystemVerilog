@@ -13,7 +13,8 @@ module ControlStore(
     output logic Write_Mem_Enable, 
     output logic [1:0] B_H_W, 
     output logic LD_or_ALU, 
-    output logic JAL
+    output logic JAL,  
+    output logic Unsigned_ALU // <--- NEED TO FIGURE THIS OUT EVENTUALLY! (nicer way to do this?)
     );
     
     assign ALUCode = (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0100000) ? 3'b001 : // sub
@@ -55,5 +56,6 @@ module ControlStore(
     
     assign JAL = (opcode == 7'b1101111 || opcode == 7'b1100111) ? 1 : 0; 
     
+    assign Unsigned_ALU = (funct3 == 3'b011 && (opcode == 7'b0010011 || opcode == 7'b0110011)) ? 1 : 0; 
                      
 endmodule
