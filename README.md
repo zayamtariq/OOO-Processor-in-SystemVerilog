@@ -24,7 +24,7 @@ While trying to figure out how to write the SystemVerilog implementation for the
 
 - Write_Enable signal (0 for Read, 1 for Write)
 - B_H_W signal (reading/writing a Byte, a Half-Word, or a Word?)
-- Signed_or_Unsigned signal (not pictured, but necessary in the event of a LBU or LHU instruction) 
+- Signed_or_Unsigned signal (necessary in the event of a LBU or LHU instruction) 
 - 32 bit address provided by the ALU/SHF unit
 - 4 8-bit write_data inputs, all separate-but-parallelized for the case of Bytes, Half-Words, or Words
 - 32 bit output of what's being read
