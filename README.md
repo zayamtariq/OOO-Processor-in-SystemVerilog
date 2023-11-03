@@ -19,7 +19,9 @@ I realized early on that I could reduce hardware by combining the ALU and SHF un
 
 ## In-Depth Data Memory Design 
 While trying to figure out how to write the SystemVerilog implementation for the Data Memory, I realized that it was a lot more involved/complicated than the Instruction Memory. RISC-V uses byte-addressable memory, which makes certain loads and stores a lot more complicated, and requires a lot more logic than the Instruction Memory, which only reads from an address, and isn't really concerned with byte-addressability (because why would you ever only want a half-word or a byte from an instruction?). The design I am proposing right now, which I'm not married to at all, is the following 
+
 ![image](https://github.com/zayamtariq/OOO-Processor-in-SystemVerilog/assets/31855609/16b4893c-d67f-4548-a72f-79c6f6046463)
+
 - Write_Enable signal (0 for Read, 1 for Write)
 - B_H_W signal (reading/writing a Byte, a Half-Word, or a Word?)
 - Signed_or_Unsigned signal (not pictured, but necessary in the event of a LBU or LHU instruction) 
