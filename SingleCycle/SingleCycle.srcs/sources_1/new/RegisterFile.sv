@@ -14,7 +14,7 @@ module RegisterFile(
     
     // should initialize all regs that are hard coded (e.g. R0 always = 0)
     initial begin 
-        
+        registers[0] = 32'd0;         
     end 
     
     // we will just be constantly reading, reading doesn't rely on clock or any signal 
