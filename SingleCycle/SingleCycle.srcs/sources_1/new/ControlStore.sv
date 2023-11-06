@@ -15,6 +15,7 @@ module ControlStore(
     output logic LD_or_ALU, 
     output logic JAL,  
     output logic Unsigned_ALU // <--- NEED TO FIGURE THIS OUT EVENTUALLY! (nicer way to do this?)
+    // need an unsigned CS signal for Data Memory 
     );
     
     assign ALUCode = (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0100000) ? 3'b001 : // sub

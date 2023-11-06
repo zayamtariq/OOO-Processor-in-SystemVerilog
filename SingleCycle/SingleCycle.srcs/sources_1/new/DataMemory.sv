@@ -10,7 +10,7 @@ module DataMemory(
     output logic [31:0] read_data  
     );
     
-    logic [31:0] data_memory [(2**32)-1:0]; // 1024 entry, 32-bit memory
+    logic [31:0] data_memory [(2**32)-1:0]; // 4 GiB, 32-bit memory
     
     // writing needs a clock 
     always_ff @ (posedge CLK) begin 
@@ -18,9 +18,21 @@ module DataMemory(
             // we can write if we've made it here!
             case (B_H_W) 
             2'b00:; // we don't care about this for stores! 
-            2'b01: data_memory[address >> 2] <= write_data[7:0]; // byte  
-            2'b10: data_memory[address >> 1] <= write_data[15:0]; // halfword 
-            2'b11: data_memory[address] <= write_data; // full word  
+            2'b01: begin 
+            case (address[1:0]) // use last two bits to index into mem location 
+                2'b00: data_memory[address >> 2][7:0] <= write_data[7:0]; // byte 
+                2'b01: data_memory[address >> 2][15:8] <= write_data[7:0];
+                2'b10: data_memory[address >> 2][23:16] <= write_data[7:0]; 
+                2'b11: data_memory[address >> 2][31:24] <= write_data[7:0]; 
+            endcase 
+            end 
+            2'b10: begin 
+            case (address[1:0]) 
+                2'b00: data_memory[address >> 2][15:0] <= write_data[15:0]; // halfword 
+                2'b10: data_memory[address >> 2][31:16] <= write_data[15:0]; 
+            endcase
+            end 
+            2'b11: data_memory[address >> 2] <= write_data; // full word  
             endcase
         end 
     end 
