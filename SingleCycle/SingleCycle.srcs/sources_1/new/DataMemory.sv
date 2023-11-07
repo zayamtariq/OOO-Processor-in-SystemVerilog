@@ -10,7 +10,16 @@ module DataMemory(
     output logic [31:0] read_data  
     );
     
-    logic [31:0] data_memory [(2**32)-1:0]; // 4 GiB, 32-bit memory
+    logic [31:0] data_memory [1023:0]; // 1024 entries (for now), 32-bit memory
+    
+    integer i; 
+    
+    // initialize all memory to 0 
+    initial begin
+        for (i = 0; i < 1024; i = i + 1) begin 
+            data_memory[i] = 32'd0; 
+        end 
+    end 
     
     // writing needs a clock 
     always_ff @ (posedge CLK) begin 
@@ -40,16 +49,16 @@ module DataMemory(
     // reading is combinational 
     always_comb begin 
         case (B_H_W) 
-            2'b00: read_data = data_memory[address]; // we can't abstract this away like in stores!
+            2'b00: read_data = data_memory[address >> 2]; // we can't abstract this away like in stores!
             2'b01: begin // lb or lbu
-                if (is_unsigned) read_data = {24'd0, data_memory[address][7:0]}; // zero extend if unsigned 
-                else read_data = {{24{data_memory[address][7]}}, data_memory[address][7:0]}; // sign extend if signed 
+                if (is_unsigned) read_data = {24'd0, data_memory[address >> 2][7:0]}; // zero extend if unsigned 
+                else read_data = {{24{data_memory[address >> 2][7]}}, data_memory[address >> 2][7:0]}; // sign extend if signed (DOESN'T SIGN EXTEND???) 
             end // signed or unsigned?
             2'b10: begin // lh or lhu 
-                if (is_unsigned) read_data = {16'd0, data_memory[address][15:0]}; // zero extend if unsigned 
-                else read_data = {{16{data_memory[address][15]}}, data_memory[address][15:0]}; // sign extend if signed 
+                if (is_unsigned) read_data = {16'd0, data_memory[address >> 2][15:0]}; // zero extend if unsigned 
+                else read_data = {{16{data_memory[address >> 2][15]}}, data_memory[address >> 2][15:0]}; // sign extend if signed 
             end // signed or unsigned? 
-            2'b11: read_data = data_memory[address]; // lw 
+            2'b11: read_data = data_memory[address >> 2]; // lw 
         endcase
     end 
     
