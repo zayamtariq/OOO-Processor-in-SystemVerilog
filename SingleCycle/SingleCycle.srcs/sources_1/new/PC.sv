@@ -3,7 +3,7 @@
 module PC(
     input wire logic CLK, 
     input wire logic [31:0] NextPC, 
-    output logic PC_Value 
+    output logic [31:0] PC_Value 
     );
     
     reg [31:0] PC; 

@@ -4,7 +4,7 @@
 
 module RegisterFile(
     input wire logic CLK, // not sure if clock is necessarily a wire (from the perspective of the reg file, it is) 
-    input wire logic write_register, 
+    input wire logic write_register, // cs signal 
     input wire logic [4:0] Register1, Register2, DestinationRegister, // 2 ^ 5 = 32 entries 
     input wire logic [31:0] write_register_data, 
     output logic [31:0] Reg1_SrcA, Reg2_SrcB  

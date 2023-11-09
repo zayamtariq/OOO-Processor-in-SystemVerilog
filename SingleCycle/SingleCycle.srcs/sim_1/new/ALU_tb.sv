@@ -7,6 +7,7 @@ module ALU_tb();
 
 // alu output 
 logic [31:0] alu_result;
+
 // alu inputs 
 logic [31:0] SrcA, SrcB; 
   
@@ -36,8 +37,8 @@ ALU alu_test(.ALUCode(ALUCode),
 
 initial begin  
 
-    SrcA = 32'h80000000; // one signed value 
-    SrcB = 32'h00000003; // one unsigned value 
+    SrcB = 32'h80000000; // one signed value 
+    SrcA = 32'h00000003; // one unsigned value 
     
         
     // ADD 
@@ -111,6 +112,14 @@ initial begin
     funct3 = 3'b010; 
     
     #100 
+    
+    // SLT unsigned 
+    
+    opcode = 7'b0110011; 
+    funct3 = 3'b011; 
+    
+    #100 
+    
     $finish;  
     
     

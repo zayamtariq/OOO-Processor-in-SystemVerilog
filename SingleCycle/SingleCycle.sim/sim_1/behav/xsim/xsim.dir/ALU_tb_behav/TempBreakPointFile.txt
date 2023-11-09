@@ -1,10 +1,1 @@
 Breakpoint File Version 1.0
-54,true,"C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv"
-62,true,"C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv"
-70,true,"C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv"
-78,true,"C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv"
-86,true,"C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv"
-94,true,"C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv"
-102,true,"C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv"
-110,true,"C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv"
-114,true,"C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/ALU_tb.sv"
