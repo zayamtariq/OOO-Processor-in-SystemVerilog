@@ -6,8 +6,6 @@ module BranchLogicBlock(
     output logic PCMux_CS // 1 for taken, 0 for not taken  
     );
     
-    initial PCMux_CS = 0; 
-    
     always_comb begin
         case (PC_Select) 
         3'b000: PCMux_CS = 0; // non branch instruction 

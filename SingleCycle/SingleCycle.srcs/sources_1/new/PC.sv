@@ -6,12 +6,12 @@ module PC(
     output logic [31:0] PC_Value 
     );
     
-    reg [31:0] PC; 
+    logic [31:0] PC = 32'd0; 
     
     // instruction memory, for us, starts at 0
-    initial begin 
-        PC = 32'd0; 
-    end 
+    // initial begin 
+        // PC = 32'd0; 
+    // end 
     
     always_ff @ (posedge CLK) begin 
         PC <= NextPC; 
