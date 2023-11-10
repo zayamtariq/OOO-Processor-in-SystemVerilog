@@ -15,7 +15,7 @@ module InstructionMemory(
     
     logic [31:0] instruction_mem [1023:0]; // 1024 entry, 32 bit addresses 
     
-    initial $readmemh("Fibonacci.txt", instruction_mem); 
+    initial $readmemb("Fibonacci.txt", instruction_mem); 
     
     // shift 2 to ensure we stay aligned 
     always_ff @ (posedge CLK) begin 
