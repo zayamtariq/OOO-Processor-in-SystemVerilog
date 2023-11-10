@@ -14,8 +14,8 @@ module ImmediateOffsetLogic(
         3'b000: Immediate_Offset = {{20{instruction[31]}}, instruction[31:20]}; 
         3'b001: Immediate_Offset = {{27{instruction[24]}}, instruction[24:20]}; 
         3'b010: Immediate_Offset = {{20{instruction[31]}}, instruction[31:25], instruction[11:7]}; 
-        3'b011: Immediate_Offset = {{20{instruction[31]}}, instruction[31], instruction[7], instruction[30-25], instruction[11-8]}; 
-        3'b100: Immediate_Offset = {{12{instruction[31]}}, instruction[31], instruction[19:12], instruction[20], instruction[30-21]}; 
+        3'b011: Immediate_Offset = {{20{instruction[31]}}, instruction[31], instruction[7], instruction[30:25], instruction[11:8]}; 
+        3'b100: Immediate_Offset = {{12{instruction[31]}}, instruction[31], instruction[19:12], instruction[20], instruction[30:21]}; 
         3'b101:; // reserved for future use
         3'b110:; // reserved for future use
         3'b111:; // reserved for future use

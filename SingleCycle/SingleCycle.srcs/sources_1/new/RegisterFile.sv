@@ -12,9 +12,13 @@ module RegisterFile(
     
     reg [31:0] registers [31:0]; // 32 bit, 32-entry register file 
     
+    integer i; 
+    
     // should initialize all regs that are hard coded (e.g. R0 always = 0)
     initial begin 
-        registers[0] = 32'd0;         
+        for (i = 0; i < 32; i = i + 1) begin 
+            registers[i] = 32'd0;         
+        end 
     end 
     
     // we will just be constantly reading, reading doesn't rely on clock or any signal 
