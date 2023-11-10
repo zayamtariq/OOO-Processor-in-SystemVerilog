@@ -6,7 +6,7 @@
 module TwoInputMux(
     input wire logic [31:0] A, B, // inputs 
     input wire logic CS, // control signal  
-    output wire logic [31:0] C // output 
+    output logic [31:0] C // output 
     );
     
     assign C = (CS == 1) ? A : B;  

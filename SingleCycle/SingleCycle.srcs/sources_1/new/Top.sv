@@ -1,7 +1,8 @@
 `timescale 1ns / 1ps
 
 module Top(
-    input CLK
+    input CLK, 
+    output logic [31:0] DataWrittenBack
     );
     
     // CONTROL SIGNALS: 
@@ -29,7 +30,7 @@ module Top(
                     .Unsigned_ALU(Unsigned_ALU), 
                     .DataMem_isUnsigned(DataMem_isUnsigned)); 
     
-    TwoInputMux PCMux(.A(PC_PLUS_FOUR), .B(PC_PLUS_OFFSET), .CS(ActualPC_CS), .C(NextPC)); 
+    PCMux PC_Mux(.plus_four(PC_PLUS_FOUR), .plus_offset(PC_PLUS_OFFSET), .pc_cs(ActualPC_CS), .next_pc(NextPC)); 
     
     Adder PC_Plus_Four(.input_one(PC_to_IMem), .input_two(32'd4), .adder_output(PC_PLUS_FOUR)); 
     Adder PC_Plus_Offset(.input_one(PC_to_IMem), .input_two(Immediate_Offset_Value), .adder_output(PC_PLUS_OFFSET)); 
@@ -38,7 +39,7 @@ module Top(
     
     TwoInputMux JAL_or_WB(.A(PC_PLUS_FOUR), .B(WriteBack_Data), .CS(JAL), .C(Data_to_DestinationRegister)); 
     
-    InstructionMemory i_mem(.PC_Address(PC_to_IMem), .Instruction(Instruction_to_Decode)); 
+    InstructionMemory i_mem(.CLK(CLK), .PC_Address(PC_to_IMem), .Instruction(Instruction_to_Decode)); 
     
     ImmediateOffsetLogic imm_logic_block(.instruction(Instruction_to_Decode), 
                                          .Immediate_Calc(Immediate_Calc), 
@@ -79,5 +80,7 @@ module Top(
                                .Reg2(Reg2_to_Mux),
                                .Immediate(Immediate_Offset_Value), 
                                .SrcB(SrcB_to_ALU)); 
+    
+    assign DataWrittenBack = Data_to_DestinationRegister; 
     
 endmodule

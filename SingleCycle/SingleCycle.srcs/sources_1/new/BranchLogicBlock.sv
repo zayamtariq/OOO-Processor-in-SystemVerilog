@@ -16,6 +16,7 @@ module BranchLogicBlock(
         3'b101: PCMux_CS = ($signed(R1_Value) >= $signed(R2_Value)) ? 1 : 0; // bge (signed!!!)  
         3'b110: PCMux_CS = (R1_Value < R2_Value) ? 1 : 0; // bltu (unsigned!!!)
         3'b111: PCMux_CS = (R1_Value >= R2_Value) ? 1 : 0; // bgeu (unsigned!!!) 
+        default: PCMux_CS = 0; // dont take dat branch!
         endcase
     end 
     
