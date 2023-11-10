@@ -38,6 +38,19 @@ x0000.001C bne r4, r0, #(-16) // if r4 != 0, then take the branch back to the be
 0100000 00101 00100 000 00100 0110011 
 1111111 00100 00000 001 00001 1100011 
 
+------------ notes --------------------
+
 -16 = 1111 1111 0000
 
 [1111111], [00001] 
+
+maybe we need to go to -20, to account for the +4 that happens? seems like we're missing
+an instruction in here 
+
+-20 = 1111 1110 1100 
+
+[1111110], [11001]
+
+whole instruction: 
+
+1111110 00100 00000 001 11001 1100011
