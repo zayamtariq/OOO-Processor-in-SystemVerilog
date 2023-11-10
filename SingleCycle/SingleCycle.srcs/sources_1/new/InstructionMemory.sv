@@ -24,7 +24,7 @@ module InstructionMemory(
         instruction_mem[4] = 32'b00000000001000000000000010110011; 
         instruction_mem[5] = 32'b00000000001100000000000100110011; 
         instruction_mem[6] = 32'b01000000010100100000001000110011; 
-        instruction_mem[7] = 32'b11111100010000000001000011100011; 
+        instruction_mem[7] = 32'b11111110010000000001000011100011; 
      end 
     
     // shift 2 to ensure we stay aligned 

@@ -46,11 +46,11 @@ module Top(
                                          .Immediate_Offset(Immediate_Offset_Value)); 
     
     RegisterFile regfile(.CLK(CLK), 
-                         .write_register(Write_Register), 
+                         .write_register(Write_Reg), 
                          .Register1(Instruction_to_Decode[19:15]),
                          .Register2(Instruction_to_Decode[24:20]), 
                          .DestinationRegister(Instruction_to_Decode[11:7]), 
-                         .write_register_data(Write_Reg), 
+                         .write_register_data(Data_to_DestinationRegister), 
                          .Reg1_SrcA(SrcA_to_ALU), 
                          .Reg2_SrcB(Reg2_to_Mux)); 
                          
@@ -74,7 +74,7 @@ module Top(
                      .is_unsigned(DataMem_isUnsigned),
                      .read_data(Data_from_DataMemory)); 
     
-    TwoInputMux LD_or_ALU_Mux(.A(ALUResult_to_DataMemory), .B(Data_from_DataMemory), .CS(LD_or_ALU), .C(WriteBack_Data)); 
+    TwoInputMux LD_or_ALU_Mux(.A(Data_from_DataMemory), .B(ALUResult_to_DataMemory), .CS(LD_or_ALU), .C(WriteBack_Data)); 
     
     Imm_or_Reg_Mux imm_reg_mux(.Imm_or_Reg(Imm_or_Reg),
                                .Reg2(Reg2_to_Mux),

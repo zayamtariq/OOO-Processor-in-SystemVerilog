@@ -53,7 +53,7 @@ module ControlStore(
                    (funct3 == 3'b001) ? 2'b10 : 
                    (funct3 == 3'b010) ? 2'b11 : 2'b00; 
                    
-    assign LD_or_ALU = (opcode == 7'b0000011) ? 1 : 0; 
+    assign LD_or_ALU = (opcode == 7'b0000011) ? 1 : 0; // 1 for load instructions, 0 for alu instructions 
     
     assign JAL = (opcode == 7'b1101111 || opcode == 7'b1100111) ? 1 : 0; 
     
