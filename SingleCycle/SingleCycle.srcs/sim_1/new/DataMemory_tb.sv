@@ -44,7 +44,7 @@ initial begin
     
     // write 0xF at location 0 first (byte) 
     address = 32'h0000; 
-    write_data = 32'h000F; 
+    write_data = 32'h00FF; 
     memory_write_enable = 1; 
     B_H_W = 2'b01; 
     
@@ -52,7 +52,7 @@ initial begin
     
     // write 0xA0 at location 1 next (half-word) 
     address = 32'h0004; 
-    write_data = 32'h00a0; 
+    write_data = 32'ha0a0; 
     memory_write_enable = 1; 
     B_H_W = 2'b10; 
     

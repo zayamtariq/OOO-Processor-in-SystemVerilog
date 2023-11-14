@@ -52,11 +52,11 @@ module DataMemory(
             2'b00: read_data = data_memory[address >> 2]; // we can't abstract this away like in stores!
             2'b01: begin // lb or lbu
                 if (is_unsigned) read_data = {24'd0, data_memory[address >> 2][7:0]}; // zero extend if unsigned 
-                else read_data = 32'(signed'(data_memory[address >> 2][7:0])); //{{24{data_memory[address >> 2][7]}}, data_memory[address >> 2][7:0]}; // sign extend if signed (DOESN'T SIGN EXTEND???) 
+                else read_data = {{24{data_memory[address >> 2][7]}}, data_memory[address >> 2][7:0]}; // sign extend if signed (DOESN'T SIGN EXTEND???) 
             end // signed or unsigned?
             2'b10: begin // lh or lhu 
                 if (is_unsigned) read_data = {16'd0, data_memory[address >> 2][15:0]}; // zero extend if unsigned 
-                else read_data = 32'(signed'(data_memory[address >> 2][15:0]));//{{16{data_memory[address >> 2][15]}}, data_memory[address >> 2][15:0]}; // sign extend if signed (DOESN'T SIGN EXTEND???) 
+                else read_data = {{16{data_memory[address >> 2][15]}}, data_memory[address >> 2][15:0]}; // sign extend if signed (DOESN'T SIGN EXTEND???) 
             end // signed or unsigned? 
             2'b11: read_data = data_memory[address >> 2]; // lw 
         endcase
