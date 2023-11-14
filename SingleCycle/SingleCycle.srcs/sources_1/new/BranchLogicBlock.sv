@@ -12,8 +12,18 @@ module BranchLogicBlock(
         3'b001: PCMux_CS = 1; // JAL/JALR (always taken)
         3'b010: PCMux_CS = (R1_Value == R2_Value) ? 1 : 0; // beq
         3'b011: PCMux_CS = (R1_Value != R2_Value) ? 1 : 0; // bne 
-        3'b100: PCMux_CS = ($signed(R1_Value) < $signed(R2_Value)) ? 1 : 0; // blt (signed!!!)  
-        3'b101: PCMux_CS = ($signed(R1_Value) >= $signed(R2_Value)) ? 1 : 0; // bge (signed!!!)  
+        3'b100: 
+        begin 
+            PCMux_CS = ($signed(R1_Value) < $signed(R2_Value)) ? 1 : 0; // blt (signed!!!)  
+            // if (R1_Value[31] == 1 && R2_Value[31] == 0) PCMux_CS = 1; // r1 neg, r2 pos
+            // else if (R1_Value[31] == 0 && R2_Value[31] == 1) PCMux_CS = 0; // r1 pos, r2 neg
+            // else if (R1_Value[31] == 0 && R2_Value[31] == 0) PCMux_CS = (R1_Value[30:0] < R2_Value[30:0]); // both positive
+            // else if (R1_Value[31] == 1 && R2_Value[31] == 1) PCMux_CS = (R1_Value[30:0] > R2_Value[30:0]); // both negative (notice different sign)
+        end 
+        3'b101: 
+        begin 
+            PCMux_CS = ($signed(R1_Value) >= $signed(R2_Value)) ? 1 : 0; // bge (signed!!!) 
+        end 
         3'b110: PCMux_CS = (R1_Value < R2_Value) ? 1 : 0; // bltu (unsigned!!!)
         3'b111: PCMux_CS = (R1_Value >= R2_Value) ? 1 : 0; // bgeu (unsigned!!!) 
         default: PCMux_CS = 0; // dont take dat branch!
