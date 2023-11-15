@@ -10,7 +10,7 @@ module DataMemory(
     output logic signed [31:0] read_data  
     );
     
-    logic [31:0] data_memory [1023:0]; // 1024 entries (for now), 32-bit memory
+    logic [31:0] data_memory [1024:0]; // 1024 entries (for now), 32-bit memory
     
     integer i; 
     

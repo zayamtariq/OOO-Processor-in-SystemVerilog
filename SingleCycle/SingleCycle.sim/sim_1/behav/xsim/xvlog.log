@@ -1,4 +1,28 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/ALU.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/Adder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Adder
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/BranchLogicBlock.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module BranchLogicBlock
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/BranchLogic_tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module BranchLogic_tb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/ControlStore.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlStore
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/DataMemory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/Imm_or_Reg_Mux.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Imm_or_Reg_Mux
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/ImmediateOffsetLogic.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImmediateOffsetLogic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/InstructionMemory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/PC.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/PCMux.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCMux
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/Top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/TwoInputMux.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TwoInputMux
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/CPU_test.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU_test
