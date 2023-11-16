@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -85,13 +86,14 @@ set_property ip_output_repo c:/Users/zayam/OOO-Processor-in-SystemVerilog/IO_Con
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib {
-  C:/Users/zayam/Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/PS2Receiver.v
-  C:/Users/zayam/Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/bin2ascii.v
-  C:/Users/zayam/Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/debouncer.v
-  C:/Users/zayam/Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/uart_buf_con.v
-  C:/Users/zayam/Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/uart_tx.v
-  C:/Users/zayam/Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/top.v
+read_verilog -library xil_defaultlib -sv {
+  C:/Users/zayam/fpga/Graphics_SystemVerilog/Graphics_SystemVerilog.srcs/sources_1/new/Clock_252.sv
+  C:/Users/zayam/fpga/Graphics_SystemVerilog/Graphics_SystemVerilog.srcs/sources_1/new/DisplayModule_480p.sv
+  C:/Users/zayam/OOO-Processor-in-SystemVerilog/IO_Controller/IO_Controller.srcs/sources_1/new/PS2Receiver.sv
+  C:/Users/zayam/OOO-Processor-in-SystemVerilog/IO_Controller/IO_Controller.srcs/sources_1/new/debouncer.sv
+  C:/Users/zayam/OOO-Processor-in-SystemVerilog/IO_Controller/IO_Controller.srcs/sources_1/new/top_keyboard.sv
+  C:/Users/zayam/fpga/Graphics_SystemVerilog/Graphics_SystemVerilog.srcs/sources_1/new/top_square.sv
+  C:/Users/zayam/OOO-Processor-in-SystemVerilog/IO_Controller/IO_Controller.srcs/sources_1/new/top.sv
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

@@ -88,42 +88,49 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/PS2Receiver.v">
+      <File Path="$PPRDIR/../../fpga/Graphics_SystemVerilog/Graphics_SystemVerilog.srcs/sources_1/new/Clock_252.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/bin2ascii.v">
+      <File Path="$PPRDIR/../../fpga/Graphics_SystemVerilog/Graphics_SystemVerilog.srcs/sources_1/new/DisplayModule_480p.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/debouncer.v">
+      <File Path="$PSRCDIR/sources_1/new/PS2Receiver.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/uart_buf_con.v">
+      <File Path="$PSRCDIR/sources_1/new/debouncer.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/uart_tx.v">
+      <File Path="$PSRCDIR/sources_1/new/top_keyboard.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../Downloads/Basys-3-Keyboard-2018.2-3/vivado_proj/Basys-3-Keyboard.srcs/sources_1/imports/hdl/top.v">
+      <File Path="$PPRDIR/../../fpga/Graphics_SystemVerilog/Graphics_SystemVerilog.srcs/sources_1/new/top_square.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/top.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
