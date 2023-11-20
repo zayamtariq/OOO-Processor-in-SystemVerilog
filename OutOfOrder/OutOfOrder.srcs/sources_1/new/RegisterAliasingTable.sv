@@ -8,7 +8,11 @@
 // output: address of where SR1 and SR2 are currently located (ROB or ARF, and which entry?)
 // and also to allocate the DR in the ROB (create a new address for it if possible, set ROB_or_ARF to 1, etc.) 
 
+// address outputs sent through an arbiter to determine if going to LD/ST queue or Issue Queue 
+
 module RegisterAliasingTable(
+
+    /* inputs */
     input wire logic CLK, 
     input wire logic [4:0] SR1_Bits, 
     input wire logic [4:0] SR2_Bits, 
@@ -19,13 +23,15 @@ module RegisterAliasingTable(
     // input control signals above
     input wire logic [6:0] Issue_Ptr, 
     input wire logic [6:0] Commit_Ptr, 
+    
+    /* outputs */ 
     output logic [6:0] SR1_Address, 
     output logic [6:0] SR2_Address, 
     output logic [6:0] DR_Address, 
     // output control signals below 
     output logic Issue_Plus_One, // control signal to send to the ROB 
     output logic Read_Reg1,
-    output logic Read_Reg2 // control signals to send to the issue queue 
+    output logic Read_Reg2 // control signals to send to the queue 
     );
     
     logic ROB_or_ARF [31:0]; // 1 for ROB, 0 for ARF (32 entries for this) 
@@ -43,12 +49,16 @@ module RegisterAliasingTable(
         if (ST_or_DR == 1'b0) begin // if writing to a destination register 
             ROB_Address[DR_Bits] <= Issue_Ptr; 
             ROB_or_ARF[DR_Bits] <= 1; 
-        end else if (ST_or_DR == 1'b1) begin // if writing to a memory location (store operation)
-            // we still need to make an entry in the ROB 
-            // but we don't necessarily need to rename anything
-            // DR_bits is arbitrary here 
+            DR_Address <= Issue_Ptr; 
         end 
+        // stores are somewhat isolated
+        // the only "dependency" we need to worry about ^ is making sure all loads and stores are in order 
         Issue_Plus_One <= 1; // this will always happen 
+    end 
+    
+    always @ (Commit_Ptr) begin 
+        // we can find the address in the ROB_Address table 
+        // and we can do some logic to get back to necessary architectural state 
     end 
     
 endmodule
