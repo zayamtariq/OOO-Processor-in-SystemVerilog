@@ -1,5 +1,5 @@
 # OOO-Processor-in-SystemVerilog
-Going to start with a simple, single-cycle RISC-V (RV32IM) processor, and take it as far as possible. 
+Going to start with a simple, single-cycle RISC-V (RV32IM) processor, and take it as far as possible, with the ultimate goal of **running Linux**. 
 
 ## Current *SINGLE CYCLE* Design: 
 
