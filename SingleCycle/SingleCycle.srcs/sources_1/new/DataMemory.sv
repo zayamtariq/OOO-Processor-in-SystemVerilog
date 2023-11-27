@@ -10,7 +10,9 @@ module DataMemory(
     output logic signed [31:0] read_data  
     );
     
-    logic [31:0] data_memory [1024:0]; // 1024 entries (for now), 32-bit memory
+    logic [31:0] data_memory [1023:0]; // 1024 entries (for now), 32-bit memory
+    // logic [31:0] data_memory_2 [50000:0]; each logic block each can have at least 50k entries
+    // will rtl synthesis be ok with this tho
     
     integer i; 
     

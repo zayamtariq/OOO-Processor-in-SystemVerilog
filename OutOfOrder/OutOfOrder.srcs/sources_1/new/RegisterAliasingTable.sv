@@ -49,7 +49,7 @@ module RegisterAliasingTable(
         if (ST_or_DR == 1'b0) begin // if writing to a destination register 
             ROB_Address[DR_Bits] <= Issue_Ptr; 
             ROB_or_ARF[DR_Bits] <= 1; 
-            DR_Address <= Issue_Ptr; 
+            DR_Address <= Issue_Ptr; // TODO: should DR_Address always be sent out, even for stores? (so we know which ROB address to send branch address to?) 
         end 
         // stores are somewhat isolated
         // the only "dependency" we need to worry about ^ is making sure all loads and stores are in order 
