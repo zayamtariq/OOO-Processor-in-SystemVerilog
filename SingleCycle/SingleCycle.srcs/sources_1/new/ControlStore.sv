@@ -18,7 +18,8 @@ module ControlStore(
     output logic DataMem_isUnsigned, // new signal 
     output logic [1:0] Mult_Instruction, // new signal 
     output logic Div_Instruction, // new signal
-    output logic Rem_Instruction 
+    output logic Rem_Instruction, // new signal 
+    output logic [1:0] InstructionType // new signal 
     );
     
     assign ALUCode = (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0100000) ? 3'b001 : // sub
@@ -74,5 +75,11 @@ module ControlStore(
                              
     assign Rem_Instruction = (funct3 == 3'b110) ? 1'b0 : 
                              (funct3 == 3'b111) ? 1'b1 : Rem_Instruction;                          
+    
+    assign Instruction_Type = (opcode == 7'b0110011 && (funct3 == 3'b110 || funct3 == 3'b111) && funct7 == 7'b0000001) ? 2'b11 : // REM 
+                              (opcode == 7'b0110011 && (funct3 == 3'b100 || funct3 == 3'b101) && funct7 == 7'b0000001) ? 2'b10 : // DIV 
+                              (opcode == 7'b0110011 && (funct3 == 3'b000 || funct3 == 3'b001 || funct3 == 3'b010 || funct3 == 3'b011) && funct7 == 7'b0000001) ? 2'b01 : // MUL 
+                              2'b00; // ALU/SHF
+    
                      
 endmodule
