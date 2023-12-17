@@ -14,8 +14,9 @@ module ControlStore(
     output logic [1:0] B_H_W, 
     output logic LD_or_ALU, 
     output logic JAL,  
-    output logic Unsigned_ALU, // <--- NEED TO FIGURE THIS OUT EVENTUALLY! (nicer way to do this?)
-    output logic DataMem_isUnsigned // not implemented yet
+    output logic Unsigned_ALU, // new signal 
+    output logic DataMem_isUnsigned, // new signal 
+    output logic [1:0] Mult_Instruction 
     );
     
     assign ALUCode = (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0100000) ? 3'b001 : // sub
@@ -60,5 +61,10 @@ module ControlStore(
     assign Unsigned_ALU = (funct3 == 3'b011 && (opcode == 7'b0010011 || opcode == 7'b0110011)) ? 1 : 0; 
     
     assign DataMem_isUnsigned = ((opcode == 7'b0000011) && (funct3 == 3'b100 || funct3 == 3'b101));
+                     
+    assign Mult_Instruction = (funct3 == 3'b000) ? 2'b00 : 
+                              (funct3 == 3'b001) ? 2'b01 :  
+                              (funct3 == 3'b010) ? 2'b10 : 
+                              (funct3 == 3'b011) ? 2'b11 : Mult_Instruction; 
                      
 endmodule
