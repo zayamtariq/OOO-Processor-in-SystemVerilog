@@ -1,14 +1,14 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
--------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Fri Nov 10 12:16:33 2023
+| Date         : Sat Dec 16 22:57:48 2023
 | Host         : DESKTOP-C15GLBI running 64-bit major release  (build 9200)
-| Command      : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
-| Design       : Top
+| Command      : report_utilization -file Divider_utilization_synth.rpt -pb Divider_utilization_synth.pb
+| Design       : Divider
 | Device       : xc7a35tcpg236-1
 | Speed File   : -1
 | Design State : Synthesized
--------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -28,20 +28,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+----------------------------+------+-------+------------+-----------+-------+
-|          Site Type         | Used | Fixed | Prohibited | Available | Util% |
-+----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  343 |     0 |          0 |     20800 |  1.65 |
-|   LUT as Logic             |   87 |     0 |          0 |     20800 |  0.42 |
-|   LUT as Memory            |  256 |     0 |          0 |      9600 |  2.67 |
-|     LUT as Distributed RAM |  256 |     0 |            |           |       |
-|     LUT as Shift Register  |    0 |     0 |            |           |       |
-| Slice Registers            |   15 |     0 |          0 |     41600 |  0.04 |
-|   Register as Flip Flop    |   15 |     0 |          0 |     41600 |  0.04 |
-|   Register as Latch        |    0 |     0 |          0 |     41600 |  0.00 |
-| F7 Muxes                   |  128 |     0 |          0 |     16300 |  0.79 |
-| F8 Muxes                   |   64 |     0 |          0 |      8150 |  0.79 |
-+----------------------------+------+-------+------------+-----------+-------+
++-------------------------+------+-------+------------+-----------+-------+
+|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
++-------------------------+------+-------+------------+-----------+-------+
+| Slice LUTs*             | 1055 |     0 |          0 |     20800 |  5.07 |
+|   LUT as Logic          | 1055 |     0 |          0 |     20800 |  5.07 |
+|   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
+| Slice Registers         |    0 |     0 |          0 |     41600 |  0.00 |
+|   Register as Flip Flop |    0 |     0 |          0 |     41600 |  0.00 |
+|   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
+| F7 Muxes                |    0 |     0 |          0 |     16300 |  0.00 |
+| F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
++-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
 
@@ -61,7 +59,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 15    |          Yes |       Reset |            - |
+| 0     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -94,7 +92,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   33 |     0 |          0 |       106 | 31.13 |
+| Bonded IOB                  |   96 |     0 |          0 |       106 | 90.57 |
 | Bonded IPADs                |    0 |     0 |          0 |        10 |  0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |         4 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         5 |  0.00 |
@@ -119,7 +117,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
+| BUFGCTRL   |    0 |     0 |          0 |        32 |  0.00 |
 | BUFIO      |    0 |     0 |          0 |        20 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |         5 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |         5 |  0.00 |
@@ -153,19 +151,12 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| RAMS64E  |  256 |  Distributed Memory |
-| MUXF7    |  128 |               MuxFx |
-| MUXF8    |   64 |               MuxFx |
-| LUT6     |   33 |                 LUT |
+| LUT3     |  992 |                 LUT |
+| CARRY4   |  288 |          CarryLogic |
+| IBUF     |   64 |                  IO |
+| LUT1     |   62 |                 LUT |
 | OBUF     |   32 |                  IO |
-| LUT5     |   27 |                 LUT |
-| LUT2     |   18 |                 LUT |
-| FDRE     |   15 |        Flop & Latch |
-| LUT3     |    9 |                 LUT |
-| LUT4     |    8 |                 LUT |
-| CARRY4   |    5 |          CarryLogic |
-| IBUF     |    1 |                  IO |
-| BUFG     |    1 |               Clock |
+| LUT2     |   32 |                 LUT |
 +----------+------+---------------------+
 
 

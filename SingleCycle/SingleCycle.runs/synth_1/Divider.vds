@@ -1,14 +1,15 @@
-
-*** Running vivado
-    with args -log Divider.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Divider.tcl
-
-
-
-****** Vivado v2022.2 (64-bit)
-  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
-  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Dec 16 22:57:13 2023
+# Process ID: 8528
+# Current directory: C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.runs/synth_1
+# Command line: vivado.exe -log Divider.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Divider.tcl
+# Log file: C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.runs/synth_1/Divider.vds
+# Journal file: C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.runs/synth_1\vivado.jou
+# Running On: DESKTOP-C15GLBI, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 16877 MB
+#-----------------------------------------------------------
 source Divider.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/utils_1/imports/synth_1/Top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/utils_1/imports/synth_1/Top.dcp for incremental synthesis
