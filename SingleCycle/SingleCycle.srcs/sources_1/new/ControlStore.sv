@@ -68,15 +68,15 @@ module ControlStore(
     assign Mult_Instruction = (funct3 == 3'b000) ? 2'b00 : 
                               (funct3 == 3'b001) ? 2'b01 :  
                               (funct3 == 3'b010) ? 2'b10 : 
-                              (funct3 == 3'b011) ? 2'b11 : Mult_Instruction; 
+                              (funct3 == 3'b011) ? 2'b11 : 2'b00; 
     
     assign Div_Instruction = (funct3 == 3'b100) ? 1'b0 : 
-                             (funct3 == 3'b101) ? 1'b1 : Div_Instruction; 
+                             (funct3 == 3'b101) ? 1'b1 : 1'b0; 
                              
     assign Rem_Instruction = (funct3 == 3'b110) ? 1'b0 : 
-                             (funct3 == 3'b111) ? 1'b1 : Rem_Instruction;                          
+                             (funct3 == 3'b111) ? 1'b1 : 1'b0;                          
     
-    assign Instruction_Type = (opcode == 7'b0110011 && (funct3 == 3'b110 || funct3 == 3'b111) && funct7 == 7'b0000001) ? 2'b11 : // REM 
+    assign InstructionType = (opcode == 7'b0110011 && (funct3 == 3'b110 || funct3 == 3'b111) && funct7 == 7'b0000001) ? 2'b11 : // REM 
                               (opcode == 7'b0110011 && (funct3 == 3'b100 || funct3 == 3'b101) && funct7 == 7'b0000001) ? 2'b10 : // DIV 
                               (opcode == 7'b0110011 && (funct3 == 3'b000 || funct3 == 3'b001 || funct3 == 3'b010 || funct3 == 3'b011) && funct7 == 7'b0000001) ? 2'b01 : // MUL 
                               2'b00; // ALU/SHF
