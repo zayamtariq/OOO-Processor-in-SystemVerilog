@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1702789031" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Top.dcp">
   <File Type="PA-TCL" Name="Divider.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Divider_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Divider_reports.tcl"/>
   <File Type="RDS-RDS" Name="Divider.vds"/>
   <File Type="RDS-UTIL" Name="Divider_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Divider_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="Divider.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Divider_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Divider_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Divider.sv">

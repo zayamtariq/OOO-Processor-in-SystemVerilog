@@ -7,7 +7,7 @@ logic [31:0] DataWrittenBack;
 
 initial CLK = 0; 
 
-always #2000 CLK = ~CLK; 
+always #20000 CLK = ~CLK; 
 
 Top CPU(.CLK(CLK), 
         .DataWrittenBack(DataWrittenBack));
