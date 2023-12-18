@@ -17,6 +17,10 @@ module InstructionMemory(
     
     initial begin 
         // $readmemb("Fibonacci.txt", instruction_mem); 
+        
+        /***** FIBONACCI CODE: *****/ 
+        
+        /*
         instruction_mem[0] = 32'b00000000000100010000000100010011; 
         instruction_mem[1] = 32'b00000000101000100000001000010011; 
         instruction_mem[2] = 32'b00000000000100101000001010010011; 
@@ -25,6 +29,11 @@ module InstructionMemory(
         instruction_mem[5] = 32'b00000000001100000000000100110011; 
         instruction_mem[6] = 32'b01000000010100100000001000110011; 
         instruction_mem[7] = 32'b11111100010000000001110011100011; 
+        */
+        
+         /****** MUL/DIV/REM TEST ******/ 
+         
+         
      end 
     
     // shift 2 to ensure we stay aligned 
