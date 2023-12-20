@@ -19,7 +19,9 @@ module ControlStore(
     output logic [1:0] Mult_Instruction, // new signal 
     output logic Div_Instruction, // new signal
     output logic Rem_Instruction, // new signal 
-    output logic [1:0] InstructionType // new signal 
+    output logic [1:0] InstructionType, // new signal 
+    output logic [2:0] CSRType, // new signal 
+    output logic SwapCSR // new signal  
     );
     
     assign ALUCode = (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0100000) ? 3'b001 : // sub
@@ -81,5 +83,14 @@ module ControlStore(
                               (opcode == 7'b0110011 && (funct3 == 3'b000 || funct3 == 3'b001 || funct3 == 3'b010 || funct3 == 3'b011) && funct7 == 7'b0000001) ? 2'b01 : // MUL 
                               2'b00; // ALU/SHF
     
-                     
+    assign CSRType = (opcode != 7'b1110011) ? 3'b111 : // 111 means NO CSR INSTRUCTION
+                     (funct3 == 3'b001) ? 3'b000 :     // CSRRW
+                     (funct3 == 3'b010) ? 3'b001 :     // CSRRS 
+                     (funct3 == 3'b011) ? 3'b010 :     // CSRRC 
+                     (funct3 == 3'b101) ? 3'b011 :     // CSRRWI 
+                     (funct3 == 3'b110) ? 3'b100 :     // CSRRSI 
+                     (funct3 == 3'b111) ? 3'b101 : 3'b111; // CSRRCI / NO CSR INSTRUCTION 
+    
+    assign SwapCSR = (opcode == 7'b1110011) ? 1 : 0; 
+                           
 endmodule
