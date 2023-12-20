@@ -34,12 +34,12 @@ module CSRCompute(
     
     always_comb begin 
         case (CSRType) 
-            3'b000: ; 
-            3'b001: ; 
-            3'b010: ; 
-            3'b011: ; 
-            3'b100: ; 
-            3'b101: ;
+            3'b000: CSR_New = SR1_Value; // CSRRW  
+            3'b001: CSR_New = (Temporary | SR1_Value); // CSRRS
+            3'b010: CSR_New = (Temporary & ~(SR1_Value)); // CSRRC 
+            3'b011: CSR_New = {27'd0, Immediate}; // CSRRWI
+            3'b100: CSR_New = (Temporary | {27'd0, Immediate}); // CSRRSI
+            3'b101: CSR_New = (Temporary & ~{27'd0, Immediate}); // CSRRCI
             3'b110: ; // unused  
             3'b111: ; // unused 
         endcase
