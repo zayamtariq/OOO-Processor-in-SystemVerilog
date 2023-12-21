@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log Divider.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Divider.tcl
+    with args -log top_io.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_io.tcl
 
 
 
@@ -9,65 +9,113 @@
   **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
-source Divider.tcl -notrace
+source top_io.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/utils_1/imports/synth_1/Top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/utils_1/imports/synth_1/Top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top Divider -part xc7a35tcpg236-1
+Command: synth_design -top top_io -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14168
+INFO: [Synth 8-7075] Helper process launched with PID 29432
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+WARNING: [Synth 8-11014] non-net output port 'keycode' cannot be initialized at declaration in SystemVerilog mode [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/PS2Receiver.sv:27]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1189.676 ; gain = 409.582
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_io' [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/top_io.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'top_keyboard' [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/top_keyboard.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'PS2Receiver' [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/PS2Receiver.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'debouncer' [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/debouncer.sv:23]
+	Parameter COUNT_MAX bound to: 19 - type: integer 
+	Parameter COUNT_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'debouncer' (0#1) [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/debouncer.sv:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/PS2Receiver.sv:55]
+INFO: [Synth 8-6155] done synthesizing module 'PS2Receiver' (0#1) [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/PS2Receiver.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_keyboard' (0#1) [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/top_keyboard.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'top_square' [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/top_square.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'Clock_252' [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/Clock_252.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'Clock_252' (0#1) [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/Clock_252.v:11]
+INFO: [Synth 8-6157] synthesizing module 'DisplayModule_480p' [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/DisplayModule_480p.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'DisplayModule_480p' (0#1) [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/DisplayModule_480p.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'top_square' (0#1) [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/top_square.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'top_io' (0#1) [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/top_io.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1280.035 ; gain = 499.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1280.035 ; gain = 499.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1280.035 ; gain = 499.941
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1280.035 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/constrs_1/new/Basys3Master.xdc]
+Finished Parsing XDC File [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/constrs_1/new/Basys3Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/constrs_1/new/Basys3Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_io_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_io_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1385.375 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1385.375 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 819.332 ; gain = 408.402
----------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Divider' [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/Divider.sv:3]
-INFO: [Synth 8-6155] done synthesizing module 'Divider' (0#1) [C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/Divider.sv:3]
----------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 909.273 ; gain = 498.344
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 909.273 ; gain = 498.344
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7a35tcpg236-1
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 909.273 ; gain = 498.344
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Preparing Guide Design
----------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6895] The reference checkpoint C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/utils_1/imports/synth_1/Top.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
----------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 909.273 ; gain = 498.344
+Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 909.273 ; gain = 498.344
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 909.273 ; gain = 498.344
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
-
-
-Incremental Synthesis Report Summary:
-
-1. Incremental synthesis run: no
-
-   Reason for not running incremental synthesis : 
-
-
-INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 3     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 12    
++---Muxes : 
+	   2 Input    4 Bit        Muxes := 12    
+	   3 Input    4 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 5     
+	   3 Input    1 Bit        Muxes := 1     
+	  12 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -80,27 +128,30 @@ BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port Div_Instruction in module Divider is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1080.891 ; gain = 669.961
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
-No constraint files found.
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1385.375 ; gain = 605.281
+---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1081.773 ; gain = 670.844
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1081.945 ; gain = 671.016
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -118,37 +169,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1081.945 ; gain = 671.016
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1081.945 ; gain = 671.016
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1081.945 ; gain = 671.016
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1081.945 ; gain = 671.016
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1081.945 ; gain = 671.016
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1081.945 ; gain = 671.016
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -161,46 +212,39 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |CARRY4 |   288|
-|2     |LUT1   |    62|
-|3     |LUT2   |    32|
-|4     |LUT3   |   992|
-|5     |IBUF   |    64|
-|6     |OBUF   |    32|
-+------+-------+------+
-
-Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |  1470|
-+------+---------+-------+------+
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     2|
+|2     |LUT1 |     6|
+|3     |LUT2 |    13|
+|4     |LUT3 |     9|
+|5     |LUT4 |    16|
+|6     |LUT5 |    15|
+|7     |LUT6 |    29|
+|8     |FDRE |    80|
+|9     |IBUF |     4|
+|10    |OBUF |    14|
++------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1081.945 ; gain = 671.016
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1385.375 ; gain = 605.281
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1081.945 ; gain = 671.016
-Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 1081.945 ; gain = 671.016
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:27 . Memory (MB): peak = 1385.375 ; gain = 499.941
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:29 . Memory (MB): peak = 1385.375 ; gain = 605.281
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1094.863 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 288 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'Divider' is not ideal for floorplanning, since the cellview 'Divider' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1385.375 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1195.508 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1385.375 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: c06034bf
+Synth Design complete, checksum: 6a8ca5a8
 INFO: [Common 17-83] Releasing license: Synthesis
-18 Infos, 3 Warnings, 1 Critical Warnings and 0 Errors encountered.
+36 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1195.508 ; gain = 792.102
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint 'C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.runs/synth_1/Divider.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file Divider_utilization_synth.rpt -pb Divider_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Dec 16 22:57:48 2023...
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 1385.375 ; gain = 983.938
+INFO: [Common 17-1381] The checkpoint 'C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.runs/synth_1/top_io.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_io_utilization_synth.rpt -pb top_io_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 21 17:04:45 2023...
