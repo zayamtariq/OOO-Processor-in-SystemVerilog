@@ -4,9 +4,10 @@
 
 module RegisterFile(
     input wire logic CLK, // not sure if clock is necessarily a wire (from the perspective of the reg file, it is) 
-    input wire logic write_register, // cs signal 
+    input wire logic write_register, SwapCSR, // cs signal (swap csr signal PROVIDED by CSR file) 
     input wire logic [4:0] Register1, Register2, DestinationRegister, // 2 ^ 5 = 32 entries 
     input wire logic [31:0] write_register_data, 
+    input wire logic [31:0] Temporary, // CSR value 
     output logic [31:0] Reg1_SrcA, Reg2_SrcB  
     );
     
@@ -32,6 +33,9 @@ module RegisterFile(
         if (write_register == 1'b1 && DestinationRegister != 5'd0) begin // we can't write to register 0 
             registers[DestinationRegister] <= write_register_data;  
         end  
+        if (SwapCSR == 1'b1) begin 
+            registers[DestinationRegister] <= Temporary; 
+        end 
     end 
     
 endmodule
