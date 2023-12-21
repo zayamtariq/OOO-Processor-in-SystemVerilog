@@ -34,7 +34,7 @@ module RegisterFile(
             registers[DestinationRegister] <= write_register_data;  
         end  
         if (SwapCSR == 1'b1) begin 
-            registers[DestinationRegister] <= Temporary; 
+            registers[DestinationRegister] = Temporary; 
         end 
     end 
     
