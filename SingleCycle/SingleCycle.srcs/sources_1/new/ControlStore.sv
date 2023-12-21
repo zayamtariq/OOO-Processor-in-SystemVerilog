@@ -13,7 +13,7 @@ module ControlStore(
     output logic Write_Mem_Enable, 
     output logic [1:0] B_H_W, 
     output logic LD_or_ALU, 
-    output logic JAL,  
+    output logic JAL, // TODO: get rid of this for WriteDRMux signal 
     output logic Unsigned_ALU, // new signal 
     output logic DataMem_isUnsigned, // new signal 
     output logic [1:0] Mult_Instruction, // new signal 
@@ -22,6 +22,7 @@ module ControlStore(
     output logic [1:0] InstructionType, // new signal 
     output logic [2:0] CSRType, // new signal 
     output logic SwapCSR // new signal  
+    // TODO: incorporate the writedrmux signal
     );
     
     assign ALUCode = (opcode == 7'b0110011 && funct3 == 3'b000 && funct7 == 7'b0100000) ? 3'b001 : // sub
@@ -45,7 +46,8 @@ module ControlStore(
                        (opcode == 7'b1100011 && funct3 == 3'b101)     ? 3'b101 : // bge 
                        (opcode == 7'b1100011 && funct3 == 3'b110)     ? 3'b110 : // bltu 
                        (opcode == 7'b1100011 && funct3 == 3'b111)     ? 3'b111 : 3'b000; // bgeu, don't care 
-                       
+    
+    // TODO: EXTEND THIS for LUI/AUIPC                    
     assign Immediate_Calc = (opcode == 7'b0010011 && (funct3 == 3'b101 || funct3 == 3'b001)) ? 3'b001 :                     
                             (opcode == 7'b0100011) ? 3'b010 : 
                             (opcode == 7'b1101111 || opcode == 7'b1100111) ? 3'b100 : 

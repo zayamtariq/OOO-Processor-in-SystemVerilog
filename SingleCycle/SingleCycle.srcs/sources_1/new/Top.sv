@@ -41,6 +41,7 @@ module Top(
     
     PC program_counter(.CLK(CLK), .NextPC(NextPC), .PC_Value(PC_to_IMem)); 
     
+    // TODO: REPLACE THIS WITH "WriteDRMux" 
     TwoInputMux JAL_or_WB(.A(PC_PLUS_FOUR), .B(WriteBack_Data), .CS(JAL), .C(Data_to_DestinationRegister)); 
     
     InstructionMemory i_mem(.CLK(CLK), .PC_Address(PC_to_IMem), .Instruction(Instruction_to_Decode)); 
