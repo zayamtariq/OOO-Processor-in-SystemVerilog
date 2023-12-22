@@ -1,5 +1,7 @@
 `timescale 1ns / 1ps
 
+// this hypothetically acts as our i/o controller 
+
 module top_io(
     input wire logic clk,
     input wire logic PS2Data,

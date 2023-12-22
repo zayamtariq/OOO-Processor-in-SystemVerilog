@@ -30,6 +30,8 @@ module top_square(
      // define a square with screen coordinates
     logic square;
     always_comb begin
+        // TODO: need to replace this square with just drawing out the shit in the fucking VGA memory 
+        // by indexing into it via x and y coordinates 
         square = (sx > 220 && sx < 420) && (sy > 140 && sy < 340); // treat as a boolean
     end
 

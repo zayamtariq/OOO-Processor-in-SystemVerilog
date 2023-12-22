@@ -1,13 +1,2 @@
 Time resolution is 1 ps
-Stopped at time : 60 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 100 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 140 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 180 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 220 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 260 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 300 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 340 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 380 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 420 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 460 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
-Stopped at time : 500 us : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/RegisterFile.sv" Line 33
+$finish called at time : 100 ns : File "C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sim_1/new/VGA_Memory_tb.sv" Line 31
