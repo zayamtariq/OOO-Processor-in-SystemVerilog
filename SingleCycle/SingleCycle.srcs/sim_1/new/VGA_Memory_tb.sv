@@ -10,7 +10,7 @@ always #halfperiod CLK = ~CLK;
 
 // inputs: 
 logic [9:0] x_coordinate; 
-logic [8:0] y_coordinate; 
+logic [9:0] y_coordinate; 
 logic WriteVGA; 
 logic [7:0] byte_to_write; 
 

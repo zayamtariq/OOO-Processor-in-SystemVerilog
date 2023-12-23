@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1703199842" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1703300576" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Top.dcp">
   <File Type="PA-TCL" Name="top_io.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_io_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_io_reports.tcl"/>
@@ -26,6 +26,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/PS2Receiver.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/VGA_Memory.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

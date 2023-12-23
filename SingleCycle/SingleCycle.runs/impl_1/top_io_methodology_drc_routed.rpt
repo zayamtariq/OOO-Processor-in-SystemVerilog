@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Thu Dec 21 17:05:47 2023
+| Date         : Fri Dec 22 21:04:59 2023
 | Host         : DESKTOP-C15GLBI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_io_methodology_drc_routed.rpt -pb top_io_methodology_drc_routed.pb -rpx top_io_methodology_drc_routed.rpx
 | Design       : top_io
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 79
+             Violations found: 80
 +-----------+------------------+-----------------------------+------------+
 | Rule      | Severity         | Description                 | Violations |
 +-----------+------------------+-----------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 79         |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell | 80         |
 +-----------+------------------+-----------------------------+------------+
 
 2. REPORT DETAILS
@@ -259,62 +259,62 @@ Related violations: <none>
 
 TIMING-17#46 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[0]/C is not reached by a timing clock
+The clock pin vga/VGA_Blue_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#47 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[0]_lopt_replica/C is not reached by a timing clock
+The clock pin vga/VGA_Blue_reg[2]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#48 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[0]_lopt_replica_2/C is not reached by a timing clock
+The clock pin vga/VGA_Blue_reg[2]_lopt_replica_2/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#49 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[0]_lopt_replica_3/C is not reached by a timing clock
+The clock pin vga/VGA_Blue_reg[2]_lopt_replica_3/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#50 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[0]_lopt_replica_4/C is not reached by a timing clock
+The clock pin vga/VGA_Blue_reg[2]_lopt_replica_4/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#51 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[0]_lopt_replica_5/C is not reached by a timing clock
+The clock pin vga/VGA_Blue_reg[2]_lopt_replica_5/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#52 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[3]/C is not reached by a timing clock
+The clock pin vga/VGA_Blue_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#53 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[3]_lopt_replica/C is not reached by a timing clock
+The clock pin vga/VGA_Blue_reg[3]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#54 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[3]_lopt_replica_2/C is not reached by a timing clock
+The clock pin vga/VGA_Red_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#55 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[3]_lopt_replica_3/C is not reached by a timing clock
+The clock pin vga/VGA_Red_reg[2]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#56 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[3]_lopt_replica_4/C is not reached by a timing clock
+The clock pin vga/VGA_Red_reg[2]_lopt_replica_2/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#57 Critical Warning
 Non-clocked sequential cell  
-The clock pin vga/VGA_Red_reg[3]_lopt_replica_5/C is not reached by a timing clock
+The clock pin vga/VGA_Red_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#58 Critical Warning
@@ -423,6 +423,11 @@ The clock pin vga/vga_hsync_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#79 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga/vga_mem/byte_to_read1/CLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#80 Critical Warning
 Non-clocked sequential cell  
 The clock pin vga/vga_vsync_reg/C is not reached by a timing clock
 Related violations: <none>

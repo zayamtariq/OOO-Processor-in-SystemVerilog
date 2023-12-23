@@ -27,26 +27,27 @@ module top_square(
                                 .vsync(vsync), 
                                 .de(de)); 
     
-     // define a square with screen coordinates
-    logic square;
-    always_comb begin
-        // TODO: need to replace this square with just drawing out the shit in the fucking VGA memory 
-        // by indexing into it via x and y coordinates 
-        square = (sx > 220 && sx < 420) && (sy > 140 && sy < 340); // treat as a boolean
-    end
-
+    logic [7:0] byte_to_read; // reading from VGA memory
+    
+    VGA_Memory vga_mem(.x_coordinate(sx), 
+                       .y_coordinate(sy), 
+                       .CLK(~output_pulse), 
+                       .WriteVGA(), // TODO: CPU needs to provide this signal eventually 
+                       .byte_to_write(), // TODO: CPU needs to provide this signal eventually 
+                       .byte_to_read(byte_to_read)); 
+    
     // paint colour: white inside square, blue outside
     logic [3:0] paint_r, paint_g, paint_b;
     always_comb begin
         if (ScanCode == 8'h75) begin 
-            paint_r = (square) ? 4'hF : 4'h1;
-            paint_g = (square) ? 4'hF : 4'h3;
-            paint_b = (square) ? 4'hF : 4'h7;
+            paint_r = 4'h7;
+            paint_g = 4'h7;
+            paint_b = 4'h7;
         end 
-        else if (ScanCode == 8'h72) begin 
-            paint_r = (square) ? 4'h1 : 4'hF;
-            paint_g = (square) ? 4'h3 : 4'hF;
-            paint_b = (square) ? 4'h7 : 4'hF;
+        else if (ScanCode == 8'h72) begin // from VGA memory
+            paint_r = {byte_to_read[7], byte_to_read[7:5]};
+            paint_g = {byte_to_read[1], byte_to_read[1], byte_to_read[1:0]}; 
+            paint_b = {byte_to_read[4], byte_to_read[4:2]};
         end else begin 
             paint_r = 4'hF; 
             paint_g = 4'hF; 

@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -88,6 +89,7 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
   C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/DisplayModule_480p.sv
   C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/PS2Receiver.sv
+  C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/VGA_Memory.sv
   C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/debouncer.sv
   C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/top_keyboard.sv
   C:/Users/zayam/OOO-Processor-in-SystemVerilog/SingleCycle/SingleCycle.srcs/sources_1/new/top_square.sv
