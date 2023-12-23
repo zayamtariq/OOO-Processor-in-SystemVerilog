@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
-module top_square(
-    input wire logic clock, // 100 mhz hardware clock 
-    input wire logic reset, // reset signal sent in through a button 
-    input wire logic [7:0] ScanCode,    // byte we received back 
+module top_vga(
+    input wire logic clock,     // 100 mhz hardware clock 
+    input wire logic reset,     // reset signal sent in through a button 
+    input wire logic [7:0] ScanCode, // byte we received back TODO: need to get rid of this eventually, keyboard will not communicate directly with vga
     output     logic vga_hsync, 
     output     logic vga_vsync, // just allows us to sync up our display with vga cable, make sure on same page
     output     logic [3:0] VGA_Red, 

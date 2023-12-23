@@ -21,7 +21,7 @@ module top_io(
                         .PS2Clk(PS2Clk), 
                         .ScanCode(ScanCode));  
     
-    top_square vga(.clock(clk), 
+    top_vga     vga(.clock(clk), 
                    .reset(reset), 
                    .ScanCode(ScanCode), 
                    .vga_hsync(vga_hsync), 
