@@ -15,76 +15,79 @@ module VGA_Memory(
     output     logic [7:0] byte_to_read
     );
     
-    logic [7:0] VGA_MEM_CHUNK_1 [51999:0]; // 52000 bytes per chunk 
-    logic [7:0] VGA_MEM_CHUNK_2 [51999:0]; 
-    logic [7:0] VGA_MEM_CHUNK_3 [51999:0]; 
-    logic [7:0] VGA_MEM_CHUNK_4 [51999:0]; 
-    logic [7:0] VGA_MEM_CHUNK_5 [51999:0]; 
-    logic [7:0] VGA_MEM_CHUNK_6 [51999:0]; 
+    logic [7:0] VGA_MEM_CHUNK_1 [51199:0]; // 51200 bytes per chunk 
+    logic [7:0] VGA_MEM_CHUNK_2 [51199:0]; 
+    logic [7:0] VGA_MEM_CHUNK_3 [51199:0]; 
+    logic [7:0] VGA_MEM_CHUNK_4 [51199:0]; 
+    logic [7:0] VGA_MEM_CHUNK_5 [51199:0]; 
+    logic [7:0] VGA_MEM_CHUNK_6 [51199:0]; 
     
     initial begin 
-        for (int i = 0; i < 52000; i = i + 1) begin 
+        for (int i = 0; i < 51200; i = i + 1) begin 
             VGA_MEM_CHUNK_1[i] = 8'hE0; 
         end 
-        for (int i = 0; i < 52000; i = i + 1) begin 
+        for (int i = 0; i < 51200; i = i + 1) begin 
             VGA_MEM_CHUNK_2[i] = 8'hE0; 
         end 
-        for (int i = 0; i < 52000; i = i + 1) begin 
+        for (int i = 0; i < 51200; i = i + 1) begin 
             VGA_MEM_CHUNK_3[i] = 8'hE0; 
         end 
-        for (int i = 0; i < 52000; i = i + 1) begin 
+        for (int i = 0; i < 51200; i = i + 1) begin 
             VGA_MEM_CHUNK_4[i] = 8'hE0; 
         end 
-        for (int i = 0; i < 52000; i = i + 1) begin 
+        for (int i = 0; i < 51200; i = i + 1) begin 
             VGA_MEM_CHUNK_5[i] = 8'hE0; 
         end 
-        for (int i = 0; i < 52000; i = i + 1) begin 
+        for (int i = 0; i < 51200; i = i + 1) begin 
             VGA_MEM_CHUNK_6[i] = 8'hE0; 
         end 
     end 
     
     // reading memory is free, doesn't cost us anything 
     always_comb begin 
-            if (y_coordinate >= 0 || y_coordinate <= 79) begin 
+        // need to explicitly define if out of the de region
+        if (x_coordinate < 640 && y_coordinate < 480) begin  
+            if (y_coordinate >= 0 && y_coordinate <= 79) begin 
                 // chunk 1 
                 byte_to_read = VGA_MEM_CHUNK_1[(y_coordinate * 640) + x_coordinate]; 
-            end else if (y_coordinate >= 80 || y_coordinate <= 159) begin 
+            end else if (y_coordinate >= 80 && y_coordinate <= 159) begin 
                 // chunk 2
                 byte_to_read = VGA_MEM_CHUNK_2[((y_coordinate - 80) * 640) + x_coordinate]; 
-            end else if (y_coordinate >= 160 || y_coordinate <= 239) begin 
+            end else if (y_coordinate >= 160 && y_coordinate <= 239) begin 
                 // chunk 3
                 byte_to_read = VGA_MEM_CHUNK_3[((y_coordinate - 160) * 640) + x_coordinate]; 
-            end else if (y_coordinate >= 240 || y_coordinate <= 319) begin 
+            end else if (y_coordinate >= 240 && y_coordinate <= 319) begin 
                 // chunk 4 
                 byte_to_read = VGA_MEM_CHUNK_4[((y_coordinate - 240) * 640) + x_coordinate]; 
-            end else if (y_coordinate >= 320 || y_coordinate <= 399) begin 
+            end else if (y_coordinate >= 320 && y_coordinate <= 399) begin 
                 // chunk 5 
                 byte_to_read = VGA_MEM_CHUNK_5[((y_coordinate - 320) * 640) + x_coordinate]; 
-            end else if (y_coordinate >= 400 || y_coordinate <= 479) begin 
+            end else if (y_coordinate >= 400 && y_coordinate <= 479) begin 
                 // chunk 6 
                 byte_to_read = VGA_MEM_CHUNK_6[((y_coordinate - 400) * 640) + x_coordinate]; 
-            end         
+            end     
+        end     
     end 
     
     
     always_ff @ (posedge CLK) begin 
         if (WriteVGA == 1'b1) begin 
-            if (y_coordinate >= 0 || y_coordinate <= 79) begin 
+            if (y_coordinate >= 0 && y_coordinate <= 79) begin 
                 // chunk 1 
                 VGA_MEM_CHUNK_1[(y_coordinate * 640) + x_coordinate] <= byte_to_write; 
-            end else if (y_coordinate >= 80 || y_coordinate <= 159) begin 
+            end else if (y_coordinate >= 80 && y_coordinate <= 159) begin 
                 // chunk 2
                 VGA_MEM_CHUNK_2[((y_coordinate - 80) * 640) + x_coordinate] <= byte_to_write; 
-            end else if (y_coordinate >= 160 || y_coordinate <= 239) begin 
+            end else if (y_coordinate >= 160 && y_coordinate <= 239) begin 
                 // chunk 3
                 VGA_MEM_CHUNK_3[((y_coordinate - 160) * 640) + x_coordinate] <= byte_to_write; 
-            end else if (y_coordinate >= 240 || y_coordinate <= 319) begin 
+            end else if (y_coordinate >= 240 && y_coordinate <= 319) begin 
                 // chunk 4 
                 VGA_MEM_CHUNK_4[((y_coordinate - 240) * 640) + x_coordinate] <= byte_to_write; 
-            end else if (y_coordinate >= 320 || y_coordinate <= 399) begin 
+            end else if (y_coordinate >= 320 && y_coordinate <= 399) begin 
                 // chunk 5 
                 VGA_MEM_CHUNK_5[((y_coordinate - 320) * 640) + x_coordinate] <= byte_to_write; 
-            end else if (y_coordinate >= 400 || y_coordinate <= 479) begin 
+            end else if (y_coordinate >= 400 && y_coordinate <= 479) begin 
                 // chunk 6 
                 VGA_MEM_CHUNK_6[((y_coordinate - 400) * 640) + x_coordinate] <= byte_to_write; 
             end 

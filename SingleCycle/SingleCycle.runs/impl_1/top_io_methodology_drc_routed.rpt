@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Fri Dec 22 21:04:59 2023
+| Date         : Fri Dec 22 22:10:48 2023
 | Host         : DESKTOP-C15GLBI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_io_methodology_drc_routed.rpt -pb top_io_methodology_drc_routed.pb -rpx top_io_methodology_drc_routed.rpx
 | Design       : top_io
@@ -23,12 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 80
-+-----------+------------------+-----------------------------+------------+
-| Rule      | Severity         | Description                 | Violations |
-+-----------+------------------+-----------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 80         |
-+-----------+------------------+-----------------------------+------------+
+             Violations found: 87
++-----------+------------------+--------------------------------+------------+
+| Rule      | Severity         | Description                    | Violations |
++-----------+------------------+--------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell    | 85         |
+| TIMING-20 | Warning          | Non-clocked latch              | 1          |
+| LATCH-1   | Advisory         | Existing latches in the design | 1          |
++-----------+------------------+--------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -429,7 +431,42 @@ Related violations: <none>
 
 TIMING-17#80 Critical Warning
 Non-clocked sequential cell  
+The clock pin vga/vga_mem/byte_to_read1__0/CLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#81 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga/vga_mem/byte_to_read1__1/CLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#82 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga/vga_mem/byte_to_read1__2/CLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#83 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga/vga_mem/byte_to_read1__3/CLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#84 Critical Warning
+Non-clocked sequential cell  
+The clock pin vga/vga_mem/byte_to_read1__4/CLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#85 Critical Warning
+Non-clocked sequential cell  
 The clock pin vga/vga_vsync_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch vga/vga_mem/byte_to_read_reg[7] cannot be properly analyzed as its control pin vga/vga_mem/byte_to_read_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+LATCH-1#1 Advisory
+Existing latches in the design  
+There are 1 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
 Related violations: <none>
 
 

@@ -31,7 +31,7 @@ module top_square(
     
     VGA_Memory vga_mem(.x_coordinate(sx), 
                        .y_coordinate(sy), 
-                       .CLK(~output_pulse), 
+                       .CLK(output_pulse), 
                        .WriteVGA(), // TODO: CPU needs to provide this signal eventually 
                        .byte_to_write(), // TODO: CPU needs to provide this signal eventually 
                        .byte_to_read(byte_to_read)); 
